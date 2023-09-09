@@ -1,0 +1,25 @@
+name: alphatalk
+channels:
+  - pytorch
+  - pyg
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.12
+  - biopython=1.79
+  - matplotlib=3.5.2
+  - networkx=2.8.4
+  - pandas=1.5.1
+  - pytorch=1.11.0
+  - pyg=2.1.0
+  - pytorch-cluster=1.6.0
+  - pytorch-scatter=2.0.9
+  - pytorch-sparse=0.6.15
+  - scikit-learn=1.2.2
+  - seaborn=0.12.2
+  - tqdm=4.64.1
+  - numpy==1.23.3
+  - scanpy==1.9.3
+  - anndata==0.9.1
+  - scipy=1.10.1
+  - docopt=0.6.2
