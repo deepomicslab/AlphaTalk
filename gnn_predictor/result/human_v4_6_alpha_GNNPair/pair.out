@@ -1,0 +1,978 @@
+Start GNNPair with args: 
+ {'epochs': 200, 'device': 'cuda', 'opt': 'adam', 'opt_scheduler': 'step', 'opt_decay_step': 5, 'opt_decay_rate': 0.9, 'weight_decay': 0.001, 'lr': 0.0003, 'es_patience': 10, 'save': True, 'pt_data': './data/graph/human_v4_6_alpha.pt', 'batch_size': 52, 'model_reduce': 'sum', 'emb_reduce': 'sum'}
+GNNPair(
+  (loss_func): BCELoss()
+  (embedding_residue): Embedding(20, 128)
+  (convs): ModuleList(
+    (0): GCNConv()
+  )
+  (l_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (r_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (mlp): Sequential(
+    (0): Linear(in_features=2304, out_features=640, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=640, out_features=256, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+    (7): Sigmoid()
+  )
+)
+len train_loader.dataset: 5264
+len val_loader.dataset: 300
+len test_loader.dataset: 1232
+20:36:00 Epoch: 001/200; AVG Training Loss (MSE):0.62016; AVG Val Loss (MSE):0.44530;AVG Val ACC:0.83333;lr:0.000300
+20:36:39 Epoch: 002/200; AVG Training Loss (MSE):0.44421; AVG Val Loss (MSE):0.40642;AVG Val ACC:0.83667;lr:0.000300
+20:37:18 Epoch: 003/200; AVG Training Loss (MSE):0.40627; AVG Val Loss (MSE):0.37508;AVG Val ACC:0.84667;lr:0.000300
+20:37:57 Epoch: 004/200; AVG Training Loss (MSE):0.39738; AVG Val Loss (MSE):0.36965;AVG Val ACC:0.85000;lr:0.000300
+20:38:36 Epoch: 005/200; AVG Training Loss (MSE):0.38013; AVG Val Loss (MSE):0.35537;AVG Val ACC:0.86667;lr:0.000300
+lr has been updated from 0.00030000 to 0.00027000
+20:39:16 Epoch: 006/200; AVG Training Loss (MSE):0.36518; AVG Val Loss (MSE):0.34949;AVG Val ACC:0.85667;lr:0.000270
+20:39:56 Epoch: 007/200; AVG Training Loss (MSE):0.36897; AVG Val Loss (MSE):0.34121;AVG Val ACC:0.86667;lr:0.000270
+20:40:36 Epoch: 008/200; AVG Training Loss (MSE):0.35475; AVG Val Loss (MSE):0.33202;AVG Val ACC:0.87333;lr:0.000270
+20:41:15 Epoch: 009/200; AVG Training Loss (MSE):0.34822; AVG Val Loss (MSE):0.32589;AVG Val ACC:0.87667;lr:0.000270
+20:41:54 Epoch: 010/200; AVG Training Loss (MSE):0.33167; AVG Val Loss (MSE):0.31584;AVG Val ACC:0.89667;lr:0.000270
+lr has been updated from 0.00027000 to 0.00024300
+20:42:34 Epoch: 011/200; AVG Training Loss (MSE):0.32573; AVG Val Loss (MSE):0.31422;AVG Val ACC:0.89000;lr:0.000243
+20:43:14 Epoch: 012/200; AVG Training Loss (MSE):0.32148; AVG Val Loss (MSE):0.31018;AVG Val ACC:0.90000;lr:0.000243
+20:43:54 Epoch: 013/200; AVG Training Loss (MSE):0.31113; AVG Val Loss (MSE):0.30400;AVG Val ACC:0.89000;lr:0.000243
+20:44:33 Epoch: 014/200; AVG Training Loss (MSE):0.30068; AVG Val Loss (MSE):0.29791;AVG Val ACC:0.90667;lr:0.000243
+20:45:13 Epoch: 015/200; AVG Training Loss (MSE):0.30116; AVG Val Loss (MSE):0.28920;AVG Val ACC:0.89333;lr:0.000243
+lr has been updated from 0.00024300 to 0.00021870
+20:45:52 Epoch: 016/200; AVG Training Loss (MSE):0.30038; AVG Val Loss (MSE):0.28474;AVG Val ACC:0.90667;lr:0.000219
+20:46:32 Epoch: 017/200; AVG Training Loss (MSE):0.28254; AVG Val Loss (MSE):0.27620;AVG Val ACC:0.91000;lr:0.000219
+20:47:11 Epoch: 018/200; AVG Training Loss (MSE):0.27861; AVG Val Loss (MSE):0.29159;AVG Val ACC:0.90000;lr:0.000219
+Counter 1 of patience 10
+20:47:52 Epoch: 019/200; AVG Training Loss (MSE):0.27676; AVG Val Loss (MSE):0.28982;AVG Val ACC:0.90000;lr:0.000219
+Counter 2 of patience 10
+20:48:32 Epoch: 020/200; AVG Training Loss (MSE):0.27788; AVG Val Loss (MSE):0.27663;AVG Val ACC:0.91000;lr:0.000219
+lr has been updated from 0.00021870 to 0.00019683
+Counter 3 of patience 10
+20:49:12 Epoch: 021/200; AVG Training Loss (MSE):0.26964; AVG Val Loss (MSE):0.27858;AVG Val ACC:0.90000;lr:0.000197
+Counter 4 of patience 10
+20:49:52 Epoch: 022/200; AVG Training Loss (MSE):0.26354; AVG Val Loss (MSE):0.27252;AVG Val ACC:0.90000;lr:0.000197
+20:50:30 Epoch: 023/200; AVG Training Loss (MSE):0.26179; AVG Val Loss (MSE):0.25727;AVG Val ACC:0.91000;lr:0.000197
+20:51:10 Epoch: 024/200; AVG Training Loss (MSE):0.25069; AVG Val Loss (MSE):0.25653;AVG Val ACC:0.91667;lr:0.000197
+20:51:50 Epoch: 025/200; AVG Training Loss (MSE):0.24797; AVG Val Loss (MSE):0.25415;AVG Val ACC:0.91333;lr:0.000197
+lr has been updated from 0.00019683 to 0.00017715
+20:52:30 Epoch: 026/200; AVG Training Loss (MSE):0.25169; AVG Val Loss (MSE):0.25168;AVG Val ACC:0.90667;lr:0.000177
+20:53:09 Epoch: 027/200; AVG Training Loss (MSE):0.24348; AVG Val Loss (MSE):0.25328;AVG Val ACC:0.90333;lr:0.000177
+Counter 1 of patience 10
+20:53:49 Epoch: 028/200; AVG Training Loss (MSE):0.24303; AVG Val Loss (MSE):0.25894;AVG Val ACC:0.90000;lr:0.000177
+Counter 2 of patience 10
+20:54:28 Epoch: 029/200; AVG Training Loss (MSE):0.23879; AVG Val Loss (MSE):0.24902;AVG Val ACC:0.91667;lr:0.000177
+20:55:08 Epoch: 030/200; AVG Training Loss (MSE):0.23044; AVG Val Loss (MSE):0.25218;AVG Val ACC:0.91333;lr:0.000177
+lr has been updated from 0.00017715 to 0.00015943
+Counter 1 of patience 10
+20:55:47 Epoch: 031/200; AVG Training Loss (MSE):0.22860; AVG Val Loss (MSE):0.24840;AVG Val ACC:0.91000;lr:0.000159
+20:56:26 Epoch: 032/200; AVG Training Loss (MSE):0.22196; AVG Val Loss (MSE):0.24290;AVG Val ACC:0.91667;lr:0.000159
+20:57:06 Epoch: 033/200; AVG Training Loss (MSE):0.22359; AVG Val Loss (MSE):0.24217;AVG Val ACC:0.91333;lr:0.000159
+20:57:45 Epoch: 034/200; AVG Training Loss (MSE):0.22286; AVG Val Loss (MSE):0.23958;AVG Val ACC:0.92000;lr:0.000159
+20:58:25 Epoch: 035/200; AVG Training Loss (MSE):0.21481; AVG Val Loss (MSE):0.24389;AVG Val ACC:0.91333;lr:0.000159
+lr has been updated from 0.00015943 to 0.00014349
+Counter 1 of patience 10
+20:59:04 Epoch: 036/200; AVG Training Loss (MSE):0.22339; AVG Val Loss (MSE):0.24022;AVG Val ACC:0.91667;lr:0.000143
+Counter 2 of patience 10
+20:59:44 Epoch: 037/200; AVG Training Loss (MSE):0.20852; AVG Val Loss (MSE):0.24036;AVG Val ACC:0.92000;lr:0.000143
+Counter 3 of patience 10
+21:00:23 Epoch: 038/200; AVG Training Loss (MSE):0.20910; AVG Val Loss (MSE):0.23795;AVG Val ACC:0.92000;lr:0.000143
+21:01:03 Epoch: 039/200; AVG Training Loss (MSE):0.21053; AVG Val Loss (MSE):0.24063;AVG Val ACC:0.92333;lr:0.000143
+Counter 1 of patience 10
+21:01:43 Epoch: 040/200; AVG Training Loss (MSE):0.21175; AVG Val Loss (MSE):0.23967;AVG Val ACC:0.91333;lr:0.000143
+lr has been updated from 0.00014349 to 0.00012914
+Counter 2 of patience 10
+21:02:22 Epoch: 041/200; AVG Training Loss (MSE):0.19876; AVG Val Loss (MSE):0.24410;AVG Val ACC:0.91667;lr:0.000129
+Counter 3 of patience 10
+21:03:01 Epoch: 042/200; AVG Training Loss (MSE):0.20328; AVG Val Loss (MSE):0.23640;AVG Val ACC:0.91667;lr:0.000129
+21:03:40 Epoch: 043/200; AVG Training Loss (MSE):0.19849; AVG Val Loss (MSE):0.23338;AVG Val ACC:0.92000;lr:0.000129
+21:04:19 Epoch: 044/200; AVG Training Loss (MSE):0.20080; AVG Val Loss (MSE):0.23629;AVG Val ACC:0.92000;lr:0.000129
+Counter 1 of patience 10
+21:04:59 Epoch: 045/200; AVG Training Loss (MSE):0.19556; AVG Val Loss (MSE):0.23411;AVG Val ACC:0.92000;lr:0.000129
+lr has been updated from 0.00012914 to 0.00011623
+Counter 2 of patience 10
+21:05:38 Epoch: 046/200; AVG Training Loss (MSE):0.19135; AVG Val Loss (MSE):0.22719;AVG Val ACC:0.92000;lr:0.000116
+21:06:19 Epoch: 047/200; AVG Training Loss (MSE):0.18865; AVG Val Loss (MSE):0.22965;AVG Val ACC:0.91333;lr:0.000116
+Counter 1 of patience 10
+21:06:58 Epoch: 048/200; AVG Training Loss (MSE):0.18030; AVG Val Loss (MSE):0.23140;AVG Val ACC:0.92000;lr:0.000116
+Counter 2 of patience 10
+21:07:37 Epoch: 049/200; AVG Training Loss (MSE):0.18793; AVG Val Loss (MSE):0.22679;AVG Val ACC:0.91333;lr:0.000116
+21:08:17 Epoch: 050/200; AVG Training Loss (MSE):0.17834; AVG Val Loss (MSE):0.22550;AVG Val ACC:0.92000;lr:0.000116
+lr has been updated from 0.00011623 to 0.00010460
+21:08:57 Epoch: 051/200; AVG Training Loss (MSE):0.18156; AVG Val Loss (MSE):0.22724;AVG Val ACC:0.91667;lr:0.000105
+Counter 1 of patience 10
+21:09:36 Epoch: 052/200; AVG Training Loss (MSE):0.17674; AVG Val Loss (MSE):0.22630;AVG Val ACC:0.92000;lr:0.000105
+Counter 2 of patience 10
+21:10:16 Epoch: 053/200; AVG Training Loss (MSE):0.18213; AVG Val Loss (MSE):0.22574;AVG Val ACC:0.91667;lr:0.000105
+Counter 3 of patience 10
+21:10:56 Epoch: 054/200; AVG Training Loss (MSE):0.17857; AVG Val Loss (MSE):0.22792;AVG Val ACC:0.92000;lr:0.000105
+Counter 4 of patience 10
+21:11:35 Epoch: 055/200; AVG Training Loss (MSE):0.17726; AVG Val Loss (MSE):0.23259;AVG Val ACC:0.92000;lr:0.000105
+lr has been updated from 0.00010460 to 0.00009414
+Counter 5 of patience 10
+21:12:14 Epoch: 056/200; AVG Training Loss (MSE):0.17558; AVG Val Loss (MSE):0.22356;AVG Val ACC:0.91667;lr:0.000094
+21:12:54 Epoch: 057/200; AVG Training Loss (MSE):0.17281; AVG Val Loss (MSE):0.22309;AVG Val ACC:0.92333;lr:0.000094
+21:13:33 Epoch: 058/200; AVG Training Loss (MSE):0.16873; AVG Val Loss (MSE):0.22499;AVG Val ACC:0.92000;lr:0.000094
+Counter 1 of patience 10
+21:14:13 Epoch: 059/200; AVG Training Loss (MSE):0.16813; AVG Val Loss (MSE):0.22595;AVG Val ACC:0.92000;lr:0.000094
+Counter 2 of patience 10
+21:14:52 Epoch: 060/200; AVG Training Loss (MSE):0.16713; AVG Val Loss (MSE):0.22247;AVG Val ACC:0.91667;lr:0.000094
+lr has been updated from 0.00009414 to 0.00008473
+21:15:33 Epoch: 061/200; AVG Training Loss (MSE):0.16914; AVG Val Loss (MSE):0.22027;AVG Val ACC:0.91667;lr:0.000085
+21:16:12 Epoch: 062/200; AVG Training Loss (MSE):0.16607; AVG Val Loss (MSE):0.22156;AVG Val ACC:0.91667;lr:0.000085
+Counter 1 of patience 10
+21:16:51 Epoch: 063/200; AVG Training Loss (MSE):0.16727; AVG Val Loss (MSE):0.22235;AVG Val ACC:0.91667;lr:0.000085
+Counter 2 of patience 10
+21:17:31 Epoch: 064/200; AVG Training Loss (MSE):0.16620; AVG Val Loss (MSE):0.22360;AVG Val ACC:0.92333;lr:0.000085
+Counter 3 of patience 10
+21:18:10 Epoch: 065/200; AVG Training Loss (MSE):0.16043; AVG Val Loss (MSE):0.21679;AVG Val ACC:0.92333;lr:0.000085
+lr has been updated from 0.00008473 to 0.00007626
+21:18:50 Epoch: 066/200; AVG Training Loss (MSE):0.16064; AVG Val Loss (MSE):0.21984;AVG Val ACC:0.92333;lr:0.000076
+Counter 1 of patience 10
+21:19:29 Epoch: 067/200; AVG Training Loss (MSE):0.15869; AVG Val Loss (MSE):0.23198;AVG Val ACC:0.92667;lr:0.000076
+Counter 2 of patience 10
+21:20:09 Epoch: 068/200; AVG Training Loss (MSE):0.16318; AVG Val Loss (MSE):0.21760;AVG Val ACC:0.92000;lr:0.000076
+Counter 3 of patience 10
+21:20:49 Epoch: 069/200; AVG Training Loss (MSE):0.14992; AVG Val Loss (MSE):0.22063;AVG Val ACC:0.92000;lr:0.000076
+Counter 4 of patience 10
+21:21:28 Epoch: 070/200; AVG Training Loss (MSE):0.15982; AVG Val Loss (MSE):0.22492;AVG Val ACC:0.92000;lr:0.000076
+lr has been updated from 0.00007626 to 0.00006863
+Counter 5 of patience 10
+21:22:07 Epoch: 071/200; AVG Training Loss (MSE):0.15650; AVG Val Loss (MSE):0.22292;AVG Val ACC:0.92000;lr:0.000069
+Counter 6 of patience 10
+21:22:47 Epoch: 072/200; AVG Training Loss (MSE):0.15244; AVG Val Loss (MSE):0.21935;AVG Val ACC:0.92667;lr:0.000069
+Counter 7 of patience 10
+21:23:26 Epoch: 073/200; AVG Training Loss (MSE):0.15617; AVG Val Loss (MSE):0.21950;AVG Val ACC:0.92000;lr:0.000069
+Counter 8 of patience 10
+21:24:06 Epoch: 074/200; AVG Training Loss (MSE):0.14788; AVG Val Loss (MSE):0.21614;AVG Val ACC:0.92333;lr:0.000069
+21:24:46 Epoch: 075/200; AVG Training Loss (MSE):0.15195; AVG Val Loss (MSE):0.21805;AVG Val ACC:0.91667;lr:0.000069
+lr has been updated from 0.00006863 to 0.00006177
+Counter 1 of patience 10
+21:25:26 Epoch: 076/200; AVG Training Loss (MSE):0.14400; AVG Val Loss (MSE):0.21952;AVG Val ACC:0.92000;lr:0.000062
+Counter 2 of patience 10
+21:26:05 Epoch: 077/200; AVG Training Loss (MSE):0.14428; AVG Val Loss (MSE):0.22178;AVG Val ACC:0.92000;lr:0.000062
+Counter 3 of patience 10
+21:26:44 Epoch: 078/200; AVG Training Loss (MSE):0.14627; AVG Val Loss (MSE):0.22599;AVG Val ACC:0.93000;lr:0.000062
+Counter 4 of patience 10
+21:27:24 Epoch: 079/200; AVG Training Loss (MSE):0.14476; AVG Val Loss (MSE):0.21891;AVG Val ACC:0.92333;lr:0.000062
+Counter 5 of patience 10
+21:28:03 Epoch: 080/200; AVG Training Loss (MSE):0.14530; AVG Val Loss (MSE):0.21578;AVG Val ACC:0.92333;lr:0.000062
+lr has been updated from 0.00006177 to 0.00005559
+21:28:42 Epoch: 081/200; AVG Training Loss (MSE):0.14125; AVG Val Loss (MSE):0.21450;AVG Val ACC:0.91333;lr:0.000056
+21:29:22 Epoch: 082/200; AVG Training Loss (MSE):0.14286; AVG Val Loss (MSE):0.21638;AVG Val ACC:0.92000;lr:0.000056
+Counter 1 of patience 10
+21:30:01 Epoch: 083/200; AVG Training Loss (MSE):0.14761; AVG Val Loss (MSE):0.22175;AVG Val ACC:0.92000;lr:0.000056
+Counter 2 of patience 10
+21:30:41 Epoch: 084/200; AVG Training Loss (MSE):0.14500; AVG Val Loss (MSE):0.21767;AVG Val ACC:0.91667;lr:0.000056
+Counter 3 of patience 10
+21:31:20 Epoch: 085/200; AVG Training Loss (MSE):0.14132; AVG Val Loss (MSE):0.21880;AVG Val ACC:0.92000;lr:0.000056
+lr has been updated from 0.00005559 to 0.00005003
+Counter 4 of patience 10
+21:31:59 Epoch: 086/200; AVG Training Loss (MSE):0.13244; AVG Val Loss (MSE):0.21946;AVG Val ACC:0.91667;lr:0.000050
+Counter 5 of patience 10
+21:32:38 Epoch: 087/200; AVG Training Loss (MSE):0.13821; AVG Val Loss (MSE):0.21898;AVG Val ACC:0.92333;lr:0.000050
+Counter 6 of patience 10
+21:33:18 Epoch: 088/200; AVG Training Loss (MSE):0.13969; AVG Val Loss (MSE):0.22379;AVG Val ACC:0.92667;lr:0.000050
+Counter 7 of patience 10
+21:33:57 Epoch: 089/200; AVG Training Loss (MSE):0.13429; AVG Val Loss (MSE):0.22199;AVG Val ACC:0.92333;lr:0.000050
+Counter 8 of patience 10
+21:34:37 Epoch: 090/200; AVG Training Loss (MSE):0.13208; AVG Val Loss (MSE):0.22075;AVG Val ACC:0.91000;lr:0.000050
+lr has been updated from 0.00005003 to 0.00004503
+Counter 9 of patience 10
+21:35:16 Epoch: 091/200; AVG Training Loss (MSE):0.13898; AVG Val Loss (MSE):0.21795;AVG Val ACC:0.92000;lr:0.000045
+Counter 10 of patience 10
+Early stopping with best_val_loss 0.21449643
+test loss: 0.247228; test acc: 0.894481
+GNNPair(
+  (loss_func): BCELoss()
+  (embedding_residue): Embedding(20, 128)
+  (convs): ModuleList(
+    (0): GCNConv()
+  )
+  (l_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (r_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (mlp): Sequential(
+    (0): Linear(in_features=2304, out_features=640, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=640, out_features=256, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+    (7): Sigmoid()
+  )
+)
+len train_loader.dataset: 5264
+len val_loader.dataset: 300
+len test_loader.dataset: 1232
+21:36:08 Epoch: 001/200; AVG Training Loss (MSE):0.62247; AVG Val Loss (MSE):0.44230;AVG Val ACC:0.82333;lr:0.000300
+21:36:48 Epoch: 002/200; AVG Training Loss (MSE):0.43235; AVG Val Loss (MSE):0.39210;AVG Val ACC:0.83667;lr:0.000300
+21:37:27 Epoch: 003/200; AVG Training Loss (MSE):0.42282; AVG Val Loss (MSE):0.38643;AVG Val ACC:0.83667;lr:0.000300
+21:38:07 Epoch: 004/200; AVG Training Loss (MSE):0.39261; AVG Val Loss (MSE):0.35857;AVG Val ACC:0.85000;lr:0.000300
+21:38:46 Epoch: 005/200; AVG Training Loss (MSE):0.38382; AVG Val Loss (MSE):0.34903;AVG Val ACC:0.87000;lr:0.000300
+lr has been updated from 0.00030000 to 0.00027000
+21:39:26 Epoch: 006/200; AVG Training Loss (MSE):0.37969; AVG Val Loss (MSE):0.34530;AVG Val ACC:0.87333;lr:0.000270
+21:40:05 Epoch: 007/200; AVG Training Loss (MSE):0.36622; AVG Val Loss (MSE):0.34743;AVG Val ACC:0.87667;lr:0.000270
+Counter 1 of patience 10
+21:40:45 Epoch: 008/200; AVG Training Loss (MSE):0.35133; AVG Val Loss (MSE):0.33819;AVG Val ACC:0.86667;lr:0.000270
+21:41:24 Epoch: 009/200; AVG Training Loss (MSE):0.34822; AVG Val Loss (MSE):0.33792;AVG Val ACC:0.86667;lr:0.000270
+21:42:03 Epoch: 010/200; AVG Training Loss (MSE):0.33666; AVG Val Loss (MSE):0.32306;AVG Val ACC:0.89000;lr:0.000270
+lr has been updated from 0.00027000 to 0.00024300
+21:42:42 Epoch: 011/200; AVG Training Loss (MSE):0.33099; AVG Val Loss (MSE):0.31949;AVG Val ACC:0.89333;lr:0.000243
+21:43:21 Epoch: 012/200; AVG Training Loss (MSE):0.31459; AVG Val Loss (MSE):0.31506;AVG Val ACC:0.88000;lr:0.000243
+21:44:01 Epoch: 013/200; AVG Training Loss (MSE):0.30811; AVG Val Loss (MSE):0.30355;AVG Val ACC:0.90667;lr:0.000243
+21:44:40 Epoch: 014/200; AVG Training Loss (MSE):0.30852; AVG Val Loss (MSE):0.29261;AVG Val ACC:0.89333;lr:0.000243
+21:45:19 Epoch: 015/200; AVG Training Loss (MSE):0.29600; AVG Val Loss (MSE):0.29743;AVG Val ACC:0.90333;lr:0.000243
+lr has been updated from 0.00024300 to 0.00021870
+Counter 1 of patience 10
+21:45:58 Epoch: 016/200; AVG Training Loss (MSE):0.29318; AVG Val Loss (MSE):0.29235;AVG Val ACC:0.90667;lr:0.000219
+21:46:38 Epoch: 017/200; AVG Training Loss (MSE):0.28615; AVG Val Loss (MSE):0.28342;AVG Val ACC:0.90333;lr:0.000219
+21:47:17 Epoch: 018/200; AVG Training Loss (MSE):0.28120; AVG Val Loss (MSE):0.27722;AVG Val ACC:0.91333;lr:0.000219
+21:47:57 Epoch: 019/200; AVG Training Loss (MSE):0.27472; AVG Val Loss (MSE):0.27602;AVG Val ACC:0.90667;lr:0.000219
+21:48:37 Epoch: 020/200; AVG Training Loss (MSE):0.26907; AVG Val Loss (MSE):0.27503;AVG Val ACC:0.90667;lr:0.000219
+lr has been updated from 0.00021870 to 0.00019683
+21:49:16 Epoch: 021/200; AVG Training Loss (MSE):0.26624; AVG Val Loss (MSE):0.27356;AVG Val ACC:0.90667;lr:0.000197
+21:49:55 Epoch: 022/200; AVG Training Loss (MSE):0.26869; AVG Val Loss (MSE):0.27039;AVG Val ACC:0.90667;lr:0.000197
+21:50:34 Epoch: 023/200; AVG Training Loss (MSE):0.26139; AVG Val Loss (MSE):0.26401;AVG Val ACC:0.90667;lr:0.000197
+21:51:14 Epoch: 024/200; AVG Training Loss (MSE):0.26057; AVG Val Loss (MSE):0.25667;AVG Val ACC:0.90667;lr:0.000197
+21:51:53 Epoch: 025/200; AVG Training Loss (MSE):0.24938; AVG Val Loss (MSE):0.28224;AVG Val ACC:0.90000;lr:0.000197
+lr has been updated from 0.00019683 to 0.00017715
+Counter 1 of patience 10
+21:52:32 Epoch: 026/200; AVG Training Loss (MSE):0.24864; AVG Val Loss (MSE):0.26148;AVG Val ACC:0.90667;lr:0.000177
+Counter 2 of patience 10
+21:53:12 Epoch: 027/200; AVG Training Loss (MSE):0.24544; AVG Val Loss (MSE):0.26055;AVG Val ACC:0.90667;lr:0.000177
+Counter 3 of patience 10
+21:53:52 Epoch: 028/200; AVG Training Loss (MSE):0.23914; AVG Val Loss (MSE):0.25672;AVG Val ACC:0.90667;lr:0.000177
+Counter 4 of patience 10
+21:54:31 Epoch: 029/200; AVG Training Loss (MSE):0.23049; AVG Val Loss (MSE):0.25238;AVG Val ACC:0.91000;lr:0.000177
+21:55:10 Epoch: 030/200; AVG Training Loss (MSE):0.23229; AVG Val Loss (MSE):0.25020;AVG Val ACC:0.91667;lr:0.000177
+lr has been updated from 0.00017715 to 0.00015943
+21:55:49 Epoch: 031/200; AVG Training Loss (MSE):0.22829; AVG Val Loss (MSE):0.24574;AVG Val ACC:0.91000;lr:0.000159
+21:56:29 Epoch: 032/200; AVG Training Loss (MSE):0.22310; AVG Val Loss (MSE):0.24546;AVG Val ACC:0.91667;lr:0.000159
+21:57:08 Epoch: 033/200; AVG Training Loss (MSE):0.22069; AVG Val Loss (MSE):0.24793;AVG Val ACC:0.91333;lr:0.000159
+Counter 1 of patience 10
+21:57:48 Epoch: 034/200; AVG Training Loss (MSE):0.21918; AVG Val Loss (MSE):0.24030;AVG Val ACC:0.92000;lr:0.000159
+21:58:27 Epoch: 035/200; AVG Training Loss (MSE):0.21685; AVG Val Loss (MSE):0.24259;AVG Val ACC:0.90667;lr:0.000159
+lr has been updated from 0.00015943 to 0.00014349
+Counter 1 of patience 10
+21:59:07 Epoch: 036/200; AVG Training Loss (MSE):0.21479; AVG Val Loss (MSE):0.23899;AVG Val ACC:0.91667;lr:0.000143
+21:59:46 Epoch: 037/200; AVG Training Loss (MSE):0.21218; AVG Val Loss (MSE):0.24012;AVG Val ACC:0.91333;lr:0.000143
+Counter 1 of patience 10
+22:00:25 Epoch: 038/200; AVG Training Loss (MSE):0.20936; AVG Val Loss (MSE):0.23994;AVG Val ACC:0.91333;lr:0.000143
+Counter 2 of patience 10
+22:01:04 Epoch: 039/200; AVG Training Loss (MSE):0.20340; AVG Val Loss (MSE):0.24107;AVG Val ACC:0.91333;lr:0.000143
+Counter 3 of patience 10
+22:01:44 Epoch: 040/200; AVG Training Loss (MSE):0.20630; AVG Val Loss (MSE):0.23409;AVG Val ACC:0.91333;lr:0.000143
+lr has been updated from 0.00014349 to 0.00012914
+22:02:24 Epoch: 041/200; AVG Training Loss (MSE):0.20464; AVG Val Loss (MSE):0.24297;AVG Val ACC:0.91333;lr:0.000129
+Counter 1 of patience 10
+22:03:03 Epoch: 042/200; AVG Training Loss (MSE):0.19655; AVG Val Loss (MSE):0.24047;AVG Val ACC:0.91333;lr:0.000129
+Counter 2 of patience 10
+22:03:42 Epoch: 043/200; AVG Training Loss (MSE):0.18931; AVG Val Loss (MSE):0.23201;AVG Val ACC:0.92000;lr:0.000129
+22:04:22 Epoch: 044/200; AVG Training Loss (MSE):0.19794; AVG Val Loss (MSE):0.23657;AVG Val ACC:0.90667;lr:0.000129
+Counter 1 of patience 10
+22:05:01 Epoch: 045/200; AVG Training Loss (MSE):0.19510; AVG Val Loss (MSE):0.23807;AVG Val ACC:0.90333;lr:0.000129
+lr has been updated from 0.00012914 to 0.00011623
+Counter 2 of patience 10
+22:05:40 Epoch: 046/200; AVG Training Loss (MSE):0.18483; AVG Val Loss (MSE):0.24036;AVG Val ACC:0.91667;lr:0.000116
+Counter 3 of patience 10
+22:06:19 Epoch: 047/200; AVG Training Loss (MSE):0.18565; AVG Val Loss (MSE):0.24230;AVG Val ACC:0.91667;lr:0.000116
+Counter 4 of patience 10
+22:06:59 Epoch: 048/200; AVG Training Loss (MSE):0.18159; AVG Val Loss (MSE):0.23237;AVG Val ACC:0.91667;lr:0.000116
+Counter 5 of patience 10
+22:07:39 Epoch: 049/200; AVG Training Loss (MSE):0.18651; AVG Val Loss (MSE):0.23144;AVG Val ACC:0.90667;lr:0.000116
+22:08:18 Epoch: 050/200; AVG Training Loss (MSE):0.17587; AVG Val Loss (MSE):0.23347;AVG Val ACC:0.91667;lr:0.000116
+lr has been updated from 0.00011623 to 0.00010460
+Counter 1 of patience 10
+22:08:57 Epoch: 051/200; AVG Training Loss (MSE):0.18010; AVG Val Loss (MSE):0.22646;AVG Val ACC:0.92000;lr:0.000105
+22:09:37 Epoch: 052/200; AVG Training Loss (MSE):0.17832; AVG Val Loss (MSE):0.23148;AVG Val ACC:0.92333;lr:0.000105
+Counter 1 of patience 10
+22:10:17 Epoch: 053/200; AVG Training Loss (MSE):0.17454; AVG Val Loss (MSE):0.22444;AVG Val ACC:0.92000;lr:0.000105
+22:10:56 Epoch: 054/200; AVG Training Loss (MSE):0.17566; AVG Val Loss (MSE):0.22321;AVG Val ACC:0.92667;lr:0.000105
+22:11:36 Epoch: 055/200; AVG Training Loss (MSE):0.17582; AVG Val Loss (MSE):0.22466;AVG Val ACC:0.92333;lr:0.000105
+lr has been updated from 0.00010460 to 0.00009414
+Counter 1 of patience 10
+22:12:16 Epoch: 056/200; AVG Training Loss (MSE):0.17443; AVG Val Loss (MSE):0.22344;AVG Val ACC:0.92000;lr:0.000094
+Counter 2 of patience 10
+22:12:55 Epoch: 057/200; AVG Training Loss (MSE):0.17001; AVG Val Loss (MSE):0.22641;AVG Val ACC:0.91333;lr:0.000094
+Counter 3 of patience 10
+22:13:34 Epoch: 058/200; AVG Training Loss (MSE):0.16709; AVG Val Loss (MSE):0.22314;AVG Val ACC:0.92000;lr:0.000094
+22:14:13 Epoch: 059/200; AVG Training Loss (MSE):0.16797; AVG Val Loss (MSE):0.22924;AVG Val ACC:0.92333;lr:0.000094
+Counter 1 of patience 10
+22:14:52 Epoch: 060/200; AVG Training Loss (MSE):0.16675; AVG Val Loss (MSE):0.22696;AVG Val ACC:0.92000;lr:0.000094
+lr has been updated from 0.00009414 to 0.00008473
+Counter 2 of patience 10
+22:15:31 Epoch: 061/200; AVG Training Loss (MSE):0.16130; AVG Val Loss (MSE):0.22309;AVG Val ACC:0.91667;lr:0.000085
+22:16:12 Epoch: 062/200; AVG Training Loss (MSE):0.16097; AVG Val Loss (MSE):0.22354;AVG Val ACC:0.92333;lr:0.000085
+Counter 1 of patience 10
+22:16:51 Epoch: 063/200; AVG Training Loss (MSE):0.15775; AVG Val Loss (MSE):0.21976;AVG Val ACC:0.91333;lr:0.000085
+22:17:31 Epoch: 064/200; AVG Training Loss (MSE):0.16130; AVG Val Loss (MSE):0.22066;AVG Val ACC:0.91667;lr:0.000085
+Counter 1 of patience 10
+22:18:10 Epoch: 065/200; AVG Training Loss (MSE):0.15685; AVG Val Loss (MSE):0.22475;AVG Val ACC:0.92000;lr:0.000085
+lr has been updated from 0.00008473 to 0.00007626
+Counter 2 of patience 10
+22:18:50 Epoch: 066/200; AVG Training Loss (MSE):0.15708; AVG Val Loss (MSE):0.22414;AVG Val ACC:0.92000;lr:0.000076
+Counter 3 of patience 10
+22:19:29 Epoch: 067/200; AVG Training Loss (MSE):0.15342; AVG Val Loss (MSE):0.22074;AVG Val ACC:0.92000;lr:0.000076
+Counter 4 of patience 10
+22:20:08 Epoch: 068/200; AVG Training Loss (MSE):0.15386; AVG Val Loss (MSE):0.22240;AVG Val ACC:0.92000;lr:0.000076
+Counter 5 of patience 10
+22:20:49 Epoch: 069/200; AVG Training Loss (MSE):0.15254; AVG Val Loss (MSE):0.22146;AVG Val ACC:0.92333;lr:0.000076
+Counter 6 of patience 10
+22:21:28 Epoch: 070/200; AVG Training Loss (MSE):0.14928; AVG Val Loss (MSE):0.22599;AVG Val ACC:0.93000;lr:0.000076
+lr has been updated from 0.00007626 to 0.00006863
+Counter 7 of patience 10
+22:22:07 Epoch: 071/200; AVG Training Loss (MSE):0.15047; AVG Val Loss (MSE):0.22757;AVG Val ACC:0.91667;lr:0.000069
+Counter 8 of patience 10
+22:22:46 Epoch: 072/200; AVG Training Loss (MSE):0.15324; AVG Val Loss (MSE):0.22265;AVG Val ACC:0.92333;lr:0.000069
+Counter 9 of patience 10
+22:23:25 Epoch: 073/200; AVG Training Loss (MSE):0.14745; AVG Val Loss (MSE):0.22381;AVG Val ACC:0.92333;lr:0.000069
+Counter 10 of patience 10
+Early stopping with best_val_loss 0.21975729
+test loss: 0.241632; test acc: 0.905032
+GNNPair(
+  (loss_func): BCELoss()
+  (embedding_residue): Embedding(20, 128)
+  (convs): ModuleList(
+    (0): GCNConv()
+  )
+  (l_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (r_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (mlp): Sequential(
+    (0): Linear(in_features=2304, out_features=640, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=640, out_features=256, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+    (7): Sigmoid()
+  )
+)
+len train_loader.dataset: 5264
+len val_loader.dataset: 300
+len test_loader.dataset: 1232
+22:24:13 Epoch: 001/200; AVG Training Loss (MSE):0.62492; AVG Val Loss (MSE):0.44291;AVG Val ACC:0.83000;lr:0.000300
+22:24:52 Epoch: 002/200; AVG Training Loss (MSE):0.43533; AVG Val Loss (MSE):0.39816;AVG Val ACC:0.84000;lr:0.000300
+22:25:32 Epoch: 003/200; AVG Training Loss (MSE):0.40532; AVG Val Loss (MSE):0.37169;AVG Val ACC:0.85000;lr:0.000300
+22:26:11 Epoch: 004/200; AVG Training Loss (MSE):0.39153; AVG Val Loss (MSE):0.37077;AVG Val ACC:0.84333;lr:0.000300
+22:26:51 Epoch: 005/200; AVG Training Loss (MSE):0.39014; AVG Val Loss (MSE):0.35700;AVG Val ACC:0.86667;lr:0.000300
+lr has been updated from 0.00030000 to 0.00027000
+22:27:30 Epoch: 006/200; AVG Training Loss (MSE):0.37048; AVG Val Loss (MSE):0.34995;AVG Val ACC:0.86667;lr:0.000270
+22:28:09 Epoch: 007/200; AVG Training Loss (MSE):0.36695; AVG Val Loss (MSE):0.34022;AVG Val ACC:0.88333;lr:0.000270
+22:28:49 Epoch: 008/200; AVG Training Loss (MSE):0.36248; AVG Val Loss (MSE):0.33153;AVG Val ACC:0.88333;lr:0.000270
+22:29:28 Epoch: 009/200; AVG Training Loss (MSE):0.34517; AVG Val Loss (MSE):0.33018;AVG Val ACC:0.88667;lr:0.000270
+22:30:08 Epoch: 010/200; AVG Training Loss (MSE):0.34078; AVG Val Loss (MSE):0.32446;AVG Val ACC:0.88000;lr:0.000270
+lr has been updated from 0.00027000 to 0.00024300
+22:30:48 Epoch: 011/200; AVG Training Loss (MSE):0.32516; AVG Val Loss (MSE):0.32250;AVG Val ACC:0.88667;lr:0.000243
+22:31:27 Epoch: 012/200; AVG Training Loss (MSE):0.32181; AVG Val Loss (MSE):0.30796;AVG Val ACC:0.89000;lr:0.000243
+22:32:07 Epoch: 013/200; AVG Training Loss (MSE):0.31282; AVG Val Loss (MSE):0.30527;AVG Val ACC:0.89667;lr:0.000243
+22:32:46 Epoch: 014/200; AVG Training Loss (MSE):0.30813; AVG Val Loss (MSE):0.30333;AVG Val ACC:0.89000;lr:0.000243
+22:33:26 Epoch: 015/200; AVG Training Loss (MSE):0.29862; AVG Val Loss (MSE):0.29802;AVG Val ACC:0.89667;lr:0.000243
+lr has been updated from 0.00024300 to 0.00021870
+22:34:05 Epoch: 016/200; AVG Training Loss (MSE):0.29122; AVG Val Loss (MSE):0.29698;AVG Val ACC:0.89333;lr:0.000219
+22:34:45 Epoch: 017/200; AVG Training Loss (MSE):0.29075; AVG Val Loss (MSE):0.28291;AVG Val ACC:0.90333;lr:0.000219
+22:35:25 Epoch: 018/200; AVG Training Loss (MSE):0.28550; AVG Val Loss (MSE):0.28761;AVG Val ACC:0.89333;lr:0.000219
+Counter 1 of patience 10
+22:36:04 Epoch: 019/200; AVG Training Loss (MSE):0.27636; AVG Val Loss (MSE):0.27692;AVG Val ACC:0.90667;lr:0.000219
+22:36:44 Epoch: 020/200; AVG Training Loss (MSE):0.27575; AVG Val Loss (MSE):0.27306;AVG Val ACC:0.91000;lr:0.000219
+lr has been updated from 0.00021870 to 0.00019683
+22:37:23 Epoch: 021/200; AVG Training Loss (MSE):0.25772; AVG Val Loss (MSE):0.27150;AVG Val ACC:0.91000;lr:0.000197
+22:38:02 Epoch: 022/200; AVG Training Loss (MSE):0.26560; AVG Val Loss (MSE):0.26578;AVG Val ACC:0.91667;lr:0.000197
+22:38:41 Epoch: 023/200; AVG Training Loss (MSE):0.25966; AVG Val Loss (MSE):0.26441;AVG Val ACC:0.91667;lr:0.000197
+22:39:22 Epoch: 024/200; AVG Training Loss (MSE):0.25959; AVG Val Loss (MSE):0.25743;AVG Val ACC:0.91333;lr:0.000197
+22:40:01 Epoch: 025/200; AVG Training Loss (MSE):0.25272; AVG Val Loss (MSE):0.26522;AVG Val ACC:0.90667;lr:0.000197
+lr has been updated from 0.00019683 to 0.00017715
+Counter 1 of patience 10
+22:40:41 Epoch: 026/200; AVG Training Loss (MSE):0.25030; AVG Val Loss (MSE):0.26189;AVG Val ACC:0.90333;lr:0.000177
+Counter 2 of patience 10
+22:41:20 Epoch: 027/200; AVG Training Loss (MSE):0.25073; AVG Val Loss (MSE):0.25386;AVG Val ACC:0.91333;lr:0.000177
+22:42:00 Epoch: 028/200; AVG Training Loss (MSE):0.23934; AVG Val Loss (MSE):0.24560;AVG Val ACC:0.91667;lr:0.000177
+22:42:39 Epoch: 029/200; AVG Training Loss (MSE):0.23630; AVG Val Loss (MSE):0.24677;AVG Val ACC:0.92000;lr:0.000177
+Counter 1 of patience 10
+22:43:18 Epoch: 030/200; AVG Training Loss (MSE):0.23419; AVG Val Loss (MSE):0.24744;AVG Val ACC:0.91000;lr:0.000177
+lr has been updated from 0.00017715 to 0.00015943
+Counter 2 of patience 10
+22:43:58 Epoch: 031/200; AVG Training Loss (MSE):0.23002; AVG Val Loss (MSE):0.25257;AVG Val ACC:0.92000;lr:0.000159
+Counter 3 of patience 10
+22:44:37 Epoch: 032/200; AVG Training Loss (MSE):0.22930; AVG Val Loss (MSE):0.24766;AVG Val ACC:0.92000;lr:0.000159
+Counter 4 of patience 10
+22:45:17 Epoch: 033/200; AVG Training Loss (MSE):0.22660; AVG Val Loss (MSE):0.24705;AVG Val ACC:0.91000;lr:0.000159
+Counter 5 of patience 10
+22:45:56 Epoch: 034/200; AVG Training Loss (MSE):0.22562; AVG Val Loss (MSE):0.24500;AVG Val ACC:0.92000;lr:0.000159
+22:46:36 Epoch: 035/200; AVG Training Loss (MSE):0.21738; AVG Val Loss (MSE):0.23907;AVG Val ACC:0.91333;lr:0.000159
+lr has been updated from 0.00015943 to 0.00014349
+22:47:15 Epoch: 036/200; AVG Training Loss (MSE):0.21908; AVG Val Loss (MSE):0.23632;AVG Val ACC:0.91000;lr:0.000143
+22:47:55 Epoch: 037/200; AVG Training Loss (MSE):0.20583; AVG Val Loss (MSE):0.23492;AVG Val ACC:0.92333;lr:0.000143
+22:48:35 Epoch: 038/200; AVG Training Loss (MSE):0.21471; AVG Val Loss (MSE):0.23641;AVG Val ACC:0.92000;lr:0.000143
+Counter 1 of patience 10
+22:49:14 Epoch: 039/200; AVG Training Loss (MSE):0.20939; AVG Val Loss (MSE):0.23708;AVG Val ACC:0.91667;lr:0.000143
+Counter 2 of patience 10
+22:49:54 Epoch: 040/200; AVG Training Loss (MSE):0.20564; AVG Val Loss (MSE):0.24397;AVG Val ACC:0.91333;lr:0.000143
+lr has been updated from 0.00014349 to 0.00012914
+Counter 3 of patience 10
+22:50:33 Epoch: 041/200; AVG Training Loss (MSE):0.21148; AVG Val Loss (MSE):0.23191;AVG Val ACC:0.92667;lr:0.000129
+22:51:13 Epoch: 042/200; AVG Training Loss (MSE):0.19939; AVG Val Loss (MSE):0.23576;AVG Val ACC:0.91000;lr:0.000129
+Counter 1 of patience 10
+22:51:53 Epoch: 043/200; AVG Training Loss (MSE):0.19746; AVG Val Loss (MSE):0.23197;AVG Val ACC:0.92000;lr:0.000129
+Counter 2 of patience 10
+22:52:32 Epoch: 044/200; AVG Training Loss (MSE):0.19215; AVG Val Loss (MSE):0.22944;AVG Val ACC:0.92000;lr:0.000129
+22:53:12 Epoch: 045/200; AVG Training Loss (MSE):0.19786; AVG Val Loss (MSE):0.22963;AVG Val ACC:0.92333;lr:0.000129
+lr has been updated from 0.00012914 to 0.00011623
+Counter 1 of patience 10
+22:53:52 Epoch: 046/200; AVG Training Loss (MSE):0.18750; AVG Val Loss (MSE):0.22741;AVG Val ACC:0.92333;lr:0.000116
+22:54:31 Epoch: 047/200; AVG Training Loss (MSE):0.18837; AVG Val Loss (MSE):0.23050;AVG Val ACC:0.92000;lr:0.000116
+Counter 1 of patience 10
+22:55:10 Epoch: 048/200; AVG Training Loss (MSE):0.18446; AVG Val Loss (MSE):0.22960;AVG Val ACC:0.92333;lr:0.000116
+Counter 2 of patience 10
+22:55:50 Epoch: 049/200; AVG Training Loss (MSE):0.18995; AVG Val Loss (MSE):0.22785;AVG Val ACC:0.92667;lr:0.000116
+Counter 3 of patience 10
+22:56:29 Epoch: 050/200; AVG Training Loss (MSE):0.18397; AVG Val Loss (MSE):0.22524;AVG Val ACC:0.91667;lr:0.000116
+lr has been updated from 0.00011623 to 0.00010460
+22:57:08 Epoch: 051/200; AVG Training Loss (MSE):0.18299; AVG Val Loss (MSE):0.23124;AVG Val ACC:0.92000;lr:0.000105
+Counter 1 of patience 10
+22:57:49 Epoch: 052/200; AVG Training Loss (MSE):0.17663; AVG Val Loss (MSE):0.22701;AVG Val ACC:0.92000;lr:0.000105
+Counter 2 of patience 10
+22:58:28 Epoch: 053/200; AVG Training Loss (MSE):0.17969; AVG Val Loss (MSE):0.22679;AVG Val ACC:0.92000;lr:0.000105
+Counter 3 of patience 10
+22:59:08 Epoch: 054/200; AVG Training Loss (MSE):0.17300; AVG Val Loss (MSE):0.22939;AVG Val ACC:0.92667;lr:0.000105
+Counter 4 of patience 10
+22:59:47 Epoch: 055/200; AVG Training Loss (MSE):0.17727; AVG Val Loss (MSE):0.22755;AVG Val ACC:0.92000;lr:0.000105
+lr has been updated from 0.00010460 to 0.00009414
+Counter 5 of patience 10
+23:00:27 Epoch: 056/200; AVG Training Loss (MSE):0.17252; AVG Val Loss (MSE):0.22817;AVG Val ACC:0.92333;lr:0.000094
+Counter 6 of patience 10
+23:01:06 Epoch: 057/200; AVG Training Loss (MSE):0.17078; AVG Val Loss (MSE):0.22831;AVG Val ACC:0.92000;lr:0.000094
+Counter 7 of patience 10
+23:01:45 Epoch: 058/200; AVG Training Loss (MSE):0.17546; AVG Val Loss (MSE):0.22450;AVG Val ACC:0.93000;lr:0.000094
+23:02:26 Epoch: 059/200; AVG Training Loss (MSE):0.16971; AVG Val Loss (MSE):0.22428;AVG Val ACC:0.92333;lr:0.000094
+23:03:05 Epoch: 060/200; AVG Training Loss (MSE):0.16237; AVG Val Loss (MSE):0.22396;AVG Val ACC:0.92667;lr:0.000094
+lr has been updated from 0.00009414 to 0.00008473
+23:03:44 Epoch: 061/200; AVG Training Loss (MSE):0.16918; AVG Val Loss (MSE):0.21804;AVG Val ACC:0.92000;lr:0.000085
+23:04:24 Epoch: 062/200; AVG Training Loss (MSE):0.16055; AVG Val Loss (MSE):0.22616;AVG Val ACC:0.93000;lr:0.000085
+Counter 1 of patience 10
+23:05:03 Epoch: 063/200; AVG Training Loss (MSE):0.16442; AVG Val Loss (MSE):0.22761;AVG Val ACC:0.92333;lr:0.000085
+Counter 2 of patience 10
+23:05:43 Epoch: 064/200; AVG Training Loss (MSE):0.16514; AVG Val Loss (MSE):0.22342;AVG Val ACC:0.91667;lr:0.000085
+Counter 3 of patience 10
+23:06:23 Epoch: 065/200; AVG Training Loss (MSE):0.15832; AVG Val Loss (MSE):0.21880;AVG Val ACC:0.93000;lr:0.000085
+lr has been updated from 0.00008473 to 0.00007626
+Counter 4 of patience 10
+23:07:03 Epoch: 066/200; AVG Training Loss (MSE):0.16164; AVG Val Loss (MSE):0.22148;AVG Val ACC:0.93000;lr:0.000076
+Counter 5 of patience 10
+23:07:42 Epoch: 067/200; AVG Training Loss (MSE):0.15693; AVG Val Loss (MSE):0.22846;AVG Val ACC:0.92667;lr:0.000076
+Counter 6 of patience 10
+23:08:21 Epoch: 068/200; AVG Training Loss (MSE):0.15655; AVG Val Loss (MSE):0.21831;AVG Val ACC:0.93000;lr:0.000076
+Counter 7 of patience 10
+23:09:01 Epoch: 069/200; AVG Training Loss (MSE):0.14913; AVG Val Loss (MSE):0.21715;AVG Val ACC:0.93000;lr:0.000076
+23:09:40 Epoch: 070/200; AVG Training Loss (MSE):0.15045; AVG Val Loss (MSE):0.21852;AVG Val ACC:0.93000;lr:0.000076
+lr has been updated from 0.00007626 to 0.00006863
+Counter 1 of patience 10
+23:10:19 Epoch: 071/200; AVG Training Loss (MSE):0.14782; AVG Val Loss (MSE):0.21539;AVG Val ACC:0.92667;lr:0.000069
+23:10:59 Epoch: 072/200; AVG Training Loss (MSE):0.14523; AVG Val Loss (MSE):0.22158;AVG Val ACC:0.92667;lr:0.000069
+Counter 1 of patience 10
+23:11:39 Epoch: 073/200; AVG Training Loss (MSE):0.15269; AVG Val Loss (MSE):0.21447;AVG Val ACC:0.92333;lr:0.000069
+23:12:19 Epoch: 074/200; AVG Training Loss (MSE):0.15375; AVG Val Loss (MSE):0.22113;AVG Val ACC:0.92667;lr:0.000069
+Counter 1 of patience 10
+23:12:58 Epoch: 075/200; AVG Training Loss (MSE):0.15470; AVG Val Loss (MSE):0.22217;AVG Val ACC:0.93000;lr:0.000069
+lr has been updated from 0.00006863 to 0.00006177
+Counter 2 of patience 10
+23:13:37 Epoch: 076/200; AVG Training Loss (MSE):0.13707; AVG Val Loss (MSE):0.21681;AVG Val ACC:0.92333;lr:0.000062
+Counter 3 of patience 10
+23:14:17 Epoch: 077/200; AVG Training Loss (MSE):0.14429; AVG Val Loss (MSE):0.22081;AVG Val ACC:0.92333;lr:0.000062
+Counter 4 of patience 10
+23:14:56 Epoch: 078/200; AVG Training Loss (MSE):0.14392; AVG Val Loss (MSE):0.21976;AVG Val ACC:0.92667;lr:0.000062
+Counter 5 of patience 10
+23:15:35 Epoch: 079/200; AVG Training Loss (MSE):0.14665; AVG Val Loss (MSE):0.21457;AVG Val ACC:0.92667;lr:0.000062
+Counter 6 of patience 10
+23:16:16 Epoch: 080/200; AVG Training Loss (MSE):0.13971; AVG Val Loss (MSE):0.21469;AVG Val ACC:0.93000;lr:0.000062
+lr has been updated from 0.00006177 to 0.00005559
+Counter 7 of patience 10
+23:16:55 Epoch: 081/200; AVG Training Loss (MSE):0.13777; AVG Val Loss (MSE):0.21401;AVG Val ACC:0.92667;lr:0.000056
+23:17:34 Epoch: 082/200; AVG Training Loss (MSE):0.13998; AVG Val Loss (MSE):0.22038;AVG Val ACC:0.92667;lr:0.000056
+Counter 1 of patience 10
+23:18:14 Epoch: 083/200; AVG Training Loss (MSE):0.13988; AVG Val Loss (MSE):0.21801;AVG Val ACC:0.92667;lr:0.000056
+Counter 2 of patience 10
+23:18:53 Epoch: 084/200; AVG Training Loss (MSE):0.14419; AVG Val Loss (MSE):0.21687;AVG Val ACC:0.92333;lr:0.000056
+Counter 3 of patience 10
+23:19:33 Epoch: 085/200; AVG Training Loss (MSE):0.13872; AVG Val Loss (MSE):0.21291;AVG Val ACC:0.92333;lr:0.000056
+lr has been updated from 0.00005559 to 0.00005003
+23:20:12 Epoch: 086/200; AVG Training Loss (MSE):0.13678; AVG Val Loss (MSE):0.21554;AVG Val ACC:0.92000;lr:0.000050
+Counter 1 of patience 10
+23:20:52 Epoch: 087/200; AVG Training Loss (MSE):0.13324; AVG Val Loss (MSE):0.21606;AVG Val ACC:0.92667;lr:0.000050
+Counter 2 of patience 10
+23:21:31 Epoch: 088/200; AVG Training Loss (MSE):0.13268; AVG Val Loss (MSE):0.21980;AVG Val ACC:0.92667;lr:0.000050
+Counter 3 of patience 10
+23:22:11 Epoch: 089/200; AVG Training Loss (MSE):0.13729; AVG Val Loss (MSE):0.21547;AVG Val ACC:0.92333;lr:0.000050
+Counter 4 of patience 10
+23:22:51 Epoch: 090/200; AVG Training Loss (MSE):0.13159; AVG Val Loss (MSE):0.21444;AVG Val ACC:0.92333;lr:0.000050
+lr has been updated from 0.00005003 to 0.00004503
+Counter 5 of patience 10
+23:23:30 Epoch: 091/200; AVG Training Loss (MSE):0.13514; AVG Val Loss (MSE):0.21780;AVG Val ACC:0.92333;lr:0.000045
+Counter 6 of patience 10
+23:24:09 Epoch: 092/200; AVG Training Loss (MSE):0.13297; AVG Val Loss (MSE):0.21447;AVG Val ACC:0.92667;lr:0.000045
+Counter 7 of patience 10
+23:24:48 Epoch: 093/200; AVG Training Loss (MSE):0.13244; AVG Val Loss (MSE):0.21467;AVG Val ACC:0.92667;lr:0.000045
+Counter 8 of patience 10
+23:25:29 Epoch: 094/200; AVG Training Loss (MSE):0.13320; AVG Val Loss (MSE):0.22195;AVG Val ACC:0.93000;lr:0.000045
+Counter 9 of patience 10
+23:26:08 Epoch: 095/200; AVG Training Loss (MSE):0.13161; AVG Val Loss (MSE):0.21243;AVG Val ACC:0.92333;lr:0.000045
+lr has been updated from 0.00004503 to 0.00004053
+23:26:47 Epoch: 096/200; AVG Training Loss (MSE):0.13437; AVG Val Loss (MSE):0.21404;AVG Val ACC:0.92333;lr:0.000041
+Counter 1 of patience 10
+23:27:27 Epoch: 097/200; AVG Training Loss (MSE):0.12680; AVG Val Loss (MSE):0.21186;AVG Val ACC:0.92333;lr:0.000041
+23:28:06 Epoch: 098/200; AVG Training Loss (MSE):0.12883; AVG Val Loss (MSE):0.21652;AVG Val ACC:0.92667;lr:0.000041
+Counter 1 of patience 10
+23:28:45 Epoch: 099/200; AVG Training Loss (MSE):0.12882; AVG Val Loss (MSE):0.21279;AVG Val ACC:0.92333;lr:0.000041
+Counter 2 of patience 10
+23:29:25 Epoch: 100/200; AVG Training Loss (MSE):0.13145; AVG Val Loss (MSE):0.21674;AVG Val ACC:0.92333;lr:0.000041
+lr has been updated from 0.00004053 to 0.00003647
+Counter 3 of patience 10
+23:30:05 Epoch: 101/200; AVG Training Loss (MSE):0.12716; AVG Val Loss (MSE):0.21669;AVG Val ACC:0.92333;lr:0.000036
+Counter 4 of patience 10
+23:30:44 Epoch: 102/200; AVG Training Loss (MSE):0.12452; AVG Val Loss (MSE):0.21537;AVG Val ACC:0.92333;lr:0.000036
+Counter 5 of patience 10
+23:31:24 Epoch: 103/200; AVG Training Loss (MSE):0.12520; AVG Val Loss (MSE):0.21239;AVG Val ACC:0.92667;lr:0.000036
+Counter 6 of patience 10
+23:32:03 Epoch: 104/200; AVG Training Loss (MSE):0.12389; AVG Val Loss (MSE):0.21639;AVG Val ACC:0.92667;lr:0.000036
+Counter 7 of patience 10
+23:32:42 Epoch: 105/200; AVG Training Loss (MSE):0.12410; AVG Val Loss (MSE):0.21839;AVG Val ACC:0.92333;lr:0.000036
+lr has been updated from 0.00003647 to 0.00003283
+Counter 8 of patience 10
+23:33:21 Epoch: 106/200; AVG Training Loss (MSE):0.12519; AVG Val Loss (MSE):0.21490;AVG Val ACC:0.92667;lr:0.000033
+Counter 9 of patience 10
+23:34:01 Epoch: 107/200; AVG Training Loss (MSE):0.12185; AVG Val Loss (MSE):0.21442;AVG Val ACC:0.92333;lr:0.000033
+Counter 10 of patience 10
+Early stopping with best_val_loss 0.21185827
+test loss: 0.241763; test acc: 0.897727
+GNNPair(
+  (loss_func): BCELoss()
+  (embedding_residue): Embedding(20, 128)
+  (convs): ModuleList(
+    (0): GCNConv()
+  )
+  (l_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (r_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (mlp): Sequential(
+    (0): Linear(in_features=2304, out_features=640, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=640, out_features=256, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+    (7): Sigmoid()
+  )
+)
+len train_loader.dataset: 5264
+len val_loader.dataset: 300
+len test_loader.dataset: 1232
+23:34:49 Epoch: 001/200; AVG Training Loss (MSE):0.62807; AVG Val Loss (MSE):0.44546;AVG Val ACC:0.83667;lr:0.000300
+23:35:29 Epoch: 002/200; AVG Training Loss (MSE):0.43498; AVG Val Loss (MSE):0.39397;AVG Val ACC:0.84000;lr:0.000300
+23:36:08 Epoch: 003/200; AVG Training Loss (MSE):0.40921; AVG Val Loss (MSE):0.38291;AVG Val ACC:0.83333;lr:0.000300
+23:36:48 Epoch: 004/200; AVG Training Loss (MSE):0.38962; AVG Val Loss (MSE):0.35757;AVG Val ACC:0.85667;lr:0.000300
+23:37:27 Epoch: 005/200; AVG Training Loss (MSE):0.38295; AVG Val Loss (MSE):0.35425;AVG Val ACC:0.86000;lr:0.000300
+lr has been updated from 0.00030000 to 0.00027000
+23:38:07 Epoch: 006/200; AVG Training Loss (MSE):0.37132; AVG Val Loss (MSE):0.36796;AVG Val ACC:0.85333;lr:0.000270
+Counter 1 of patience 10
+23:38:46 Epoch: 007/200; AVG Training Loss (MSE):0.36743; AVG Val Loss (MSE):0.36128;AVG Val ACC:0.84667;lr:0.000270
+Counter 2 of patience 10
+23:39:26 Epoch: 008/200; AVG Training Loss (MSE):0.35004; AVG Val Loss (MSE):0.33234;AVG Val ACC:0.88333;lr:0.000270
+23:40:06 Epoch: 009/200; AVG Training Loss (MSE):0.34419; AVG Val Loss (MSE):0.34781;AVG Val ACC:0.83000;lr:0.000270
+Counter 1 of patience 10
+23:40:45 Epoch: 010/200; AVG Training Loss (MSE):0.33295; AVG Val Loss (MSE):0.31794;AVG Val ACC:0.90000;lr:0.000270
+lr has been updated from 0.00027000 to 0.00024300
+23:41:25 Epoch: 011/200; AVG Training Loss (MSE):0.32588; AVG Val Loss (MSE):0.31176;AVG Val ACC:0.88667;lr:0.000243
+23:42:04 Epoch: 012/200; AVG Training Loss (MSE):0.31573; AVG Val Loss (MSE):0.30592;AVG Val ACC:0.90667;lr:0.000243
+23:42:44 Epoch: 013/200; AVG Training Loss (MSE):0.31068; AVG Val Loss (MSE):0.31172;AVG Val ACC:0.88333;lr:0.000243
+Counter 1 of patience 10
+23:43:23 Epoch: 014/200; AVG Training Loss (MSE):0.30225; AVG Val Loss (MSE):0.29799;AVG Val ACC:0.90667;lr:0.000243
+23:44:08 Epoch: 015/200; AVG Training Loss (MSE):0.30011; AVG Val Loss (MSE):0.28848;AVG Val ACC:0.91333;lr:0.000243
+lr has been updated from 0.00024300 to 0.00021870
+23:44:47 Epoch: 016/200; AVG Training Loss (MSE):0.29306; AVG Val Loss (MSE):0.28681;AVG Val ACC:0.90667;lr:0.000219
+23:45:27 Epoch: 017/200; AVG Training Loss (MSE):0.29155; AVG Val Loss (MSE):0.28416;AVG Val ACC:0.90333;lr:0.000219
+23:46:06 Epoch: 018/200; AVG Training Loss (MSE):0.28391; AVG Val Loss (MSE):0.27775;AVG Val ACC:0.90667;lr:0.000219
+23:46:46 Epoch: 019/200; AVG Training Loss (MSE):0.27964; AVG Val Loss (MSE):0.27280;AVG Val ACC:0.90667;lr:0.000219
+23:47:25 Epoch: 020/200; AVG Training Loss (MSE):0.27187; AVG Val Loss (MSE):0.27060;AVG Val ACC:0.91333;lr:0.000219
+lr has been updated from 0.00021870 to 0.00019683
+23:48:04 Epoch: 021/200; AVG Training Loss (MSE):0.26647; AVG Val Loss (MSE):0.26972;AVG Val ACC:0.90667;lr:0.000197
+23:48:45 Epoch: 022/200; AVG Training Loss (MSE):0.26352; AVG Val Loss (MSE):0.26779;AVG Val ACC:0.91000;lr:0.000197
+23:49:24 Epoch: 023/200; AVG Training Loss (MSE):0.25606; AVG Val Loss (MSE):0.27082;AVG Val ACC:0.90667;lr:0.000197
+Counter 1 of patience 10
+23:50:04 Epoch: 024/200; AVG Training Loss (MSE):0.25796; AVG Val Loss (MSE):0.26420;AVG Val ACC:0.90667;lr:0.000197
+23:50:43 Epoch: 025/200; AVG Training Loss (MSE):0.25794; AVG Val Loss (MSE):0.25615;AVG Val ACC:0.91000;lr:0.000197
+lr has been updated from 0.00019683 to 0.00017715
+23:51:23 Epoch: 026/200; AVG Training Loss (MSE):0.24776; AVG Val Loss (MSE):0.25374;AVG Val ACC:0.91333;lr:0.000177
+23:52:02 Epoch: 027/200; AVG Training Loss (MSE):0.24803; AVG Val Loss (MSE):0.25530;AVG Val ACC:0.90667;lr:0.000177
+Counter 1 of patience 10
+23:52:41 Epoch: 028/200; AVG Training Loss (MSE):0.23645; AVG Val Loss (MSE):0.24873;AVG Val ACC:0.91667;lr:0.000177
+23:53:21 Epoch: 029/200; AVG Training Loss (MSE):0.23574; AVG Val Loss (MSE):0.24420;AVG Val ACC:0.92000;lr:0.000177
+23:54:01 Epoch: 030/200; AVG Training Loss (MSE):0.23594; AVG Val Loss (MSE):0.24860;AVG Val ACC:0.90667;lr:0.000177
+lr has been updated from 0.00017715 to 0.00015943
+Counter 1 of patience 10
+23:54:40 Epoch: 031/200; AVG Training Loss (MSE):0.22999; AVG Val Loss (MSE):0.24590;AVG Val ACC:0.91333;lr:0.000159
+Counter 2 of patience 10
+23:55:19 Epoch: 032/200; AVG Training Loss (MSE):0.22733; AVG Val Loss (MSE):0.24553;AVG Val ACC:0.91333;lr:0.000159
+Counter 3 of patience 10
+23:55:58 Epoch: 033/200; AVG Training Loss (MSE):0.22648; AVG Val Loss (MSE):0.24389;AVG Val ACC:0.91333;lr:0.000159
+23:56:38 Epoch: 034/200; AVG Training Loss (MSE):0.21538; AVG Val Loss (MSE):0.24195;AVG Val ACC:0.91000;lr:0.000159
+23:57:17 Epoch: 035/200; AVG Training Loss (MSE):0.21756; AVG Val Loss (MSE):0.24754;AVG Val ACC:0.91000;lr:0.000159
+lr has been updated from 0.00015943 to 0.00014349
+Counter 1 of patience 10
+23:57:57 Epoch: 036/200; AVG Training Loss (MSE):0.21454; AVG Val Loss (MSE):0.24095;AVG Val ACC:0.91333;lr:0.000143
+23:58:36 Epoch: 037/200; AVG Training Loss (MSE):0.21563; AVG Val Loss (MSE):0.23943;AVG Val ACC:0.91333;lr:0.000143
+23:59:16 Epoch: 038/200; AVG Training Loss (MSE):0.21267; AVG Val Loss (MSE):0.23643;AVG Val ACC:0.91000;lr:0.000143
+23:59:55 Epoch: 039/200; AVG Training Loss (MSE):0.21348; AVG Val Loss (MSE):0.23659;AVG Val ACC:0.91333;lr:0.000143
+Counter 1 of patience 10
+00:00:35 Epoch: 040/200; AVG Training Loss (MSE):0.20617; AVG Val Loss (MSE):0.22874;AVG Val ACC:0.91333;lr:0.000143
+lr has been updated from 0.00014349 to 0.00012914
+00:01:14 Epoch: 041/200; AVG Training Loss (MSE):0.20557; AVG Val Loss (MSE):0.22660;AVG Val ACC:0.92333;lr:0.000129
+00:01:54 Epoch: 042/200; AVG Training Loss (MSE):0.19761; AVG Val Loss (MSE):0.22878;AVG Val ACC:0.92333;lr:0.000129
+Counter 1 of patience 10
+00:02:34 Epoch: 043/200; AVG Training Loss (MSE):0.20409; AVG Val Loss (MSE):0.22631;AVG Val ACC:0.92000;lr:0.000129
+00:03:13 Epoch: 044/200; AVG Training Loss (MSE):0.19593; AVG Val Loss (MSE):0.22292;AVG Val ACC:0.92000;lr:0.000129
+00:03:53 Epoch: 045/200; AVG Training Loss (MSE):0.19866; AVG Val Loss (MSE):0.22502;AVG Val ACC:0.91667;lr:0.000129
+lr has been updated from 0.00012914 to 0.00011623
+Counter 1 of patience 10
+00:04:32 Epoch: 046/200; AVG Training Loss (MSE):0.18788; AVG Val Loss (MSE):0.23258;AVG Val ACC:0.92000;lr:0.000116
+Counter 2 of patience 10
+00:05:11 Epoch: 047/200; AVG Training Loss (MSE):0.19184; AVG Val Loss (MSE):0.22244;AVG Val ACC:0.92000;lr:0.000116
+00:05:51 Epoch: 048/200; AVG Training Loss (MSE):0.18417; AVG Val Loss (MSE):0.22628;AVG Val ACC:0.91000;lr:0.000116
+Counter 1 of patience 10
+00:06:30 Epoch: 049/200; AVG Training Loss (MSE):0.19060; AVG Val Loss (MSE):0.22317;AVG Val ACC:0.91333;lr:0.000116
+Counter 2 of patience 10
+00:07:10 Epoch: 050/200; AVG Training Loss (MSE):0.18398; AVG Val Loss (MSE):0.22663;AVG Val ACC:0.91667;lr:0.000116
+lr has been updated from 0.00011623 to 0.00010460
+Counter 3 of patience 10
+00:07:49 Epoch: 051/200; AVG Training Loss (MSE):0.18378; AVG Val Loss (MSE):0.22369;AVG Val ACC:0.91667;lr:0.000105
+Counter 4 of patience 10
+00:08:28 Epoch: 052/200; AVG Training Loss (MSE):0.18347; AVG Val Loss (MSE):0.22799;AVG Val ACC:0.92000;lr:0.000105
+Counter 5 of patience 10
+00:09:08 Epoch: 053/200; AVG Training Loss (MSE):0.18210; AVG Val Loss (MSE):0.22450;AVG Val ACC:0.91000;lr:0.000105
+Counter 6 of patience 10
+00:09:47 Epoch: 054/200; AVG Training Loss (MSE):0.17918; AVG Val Loss (MSE):0.21909;AVG Val ACC:0.92000;lr:0.000105
+00:10:27 Epoch: 055/200; AVG Training Loss (MSE):0.18025; AVG Val Loss (MSE):0.21705;AVG Val ACC:0.92333;lr:0.000105
+lr has been updated from 0.00010460 to 0.00009414
+00:11:06 Epoch: 056/200; AVG Training Loss (MSE):0.17110; AVG Val Loss (MSE):0.22503;AVG Val ACC:0.92333;lr:0.000094
+Counter 1 of patience 10
+00:11:47 Epoch: 057/200; AVG Training Loss (MSE):0.16813; AVG Val Loss (MSE):0.22624;AVG Val ACC:0.93000;lr:0.000094
+Counter 2 of patience 10
+00:12:27 Epoch: 058/200; AVG Training Loss (MSE):0.17122; AVG Val Loss (MSE):0.21881;AVG Val ACC:0.92000;lr:0.000094
+Counter 3 of patience 10
+00:13:07 Epoch: 059/200; AVG Training Loss (MSE):0.16321; AVG Val Loss (MSE):0.21634;AVG Val ACC:0.92000;lr:0.000094
+00:13:46 Epoch: 060/200; AVG Training Loss (MSE):0.17019; AVG Val Loss (MSE):0.22278;AVG Val ACC:0.92000;lr:0.000094
+lr has been updated from 0.00009414 to 0.00008473
+Counter 1 of patience 10
+00:14:25 Epoch: 061/200; AVG Training Loss (MSE):0.16811; AVG Val Loss (MSE):0.21925;AVG Val ACC:0.92333;lr:0.000085
+Counter 2 of patience 10
+00:15:04 Epoch: 062/200; AVG Training Loss (MSE):0.16428; AVG Val Loss (MSE):0.22150;AVG Val ACC:0.92000;lr:0.000085
+Counter 3 of patience 10
+00:15:44 Epoch: 063/200; AVG Training Loss (MSE):0.16226; AVG Val Loss (MSE):0.22831;AVG Val ACC:0.92000;lr:0.000085
+Counter 4 of patience 10
+00:16:25 Epoch: 064/200; AVG Training Loss (MSE):0.16311; AVG Val Loss (MSE):0.22367;AVG Val ACC:0.92000;lr:0.000085
+Counter 5 of patience 10
+00:17:05 Epoch: 065/200; AVG Training Loss (MSE):0.16231; AVG Val Loss (MSE):0.21441;AVG Val ACC:0.91667;lr:0.000085
+lr has been updated from 0.00008473 to 0.00007626
+00:17:44 Epoch: 066/200; AVG Training Loss (MSE):0.15661; AVG Val Loss (MSE):0.22075;AVG Val ACC:0.92333;lr:0.000076
+Counter 1 of patience 10
+00:18:25 Epoch: 067/200; AVG Training Loss (MSE):0.15423; AVG Val Loss (MSE):0.21827;AVG Val ACC:0.92667;lr:0.000076
+Counter 2 of patience 10
+00:19:05 Epoch: 068/200; AVG Training Loss (MSE):0.15476; AVG Val Loss (MSE):0.21564;AVG Val ACC:0.92667;lr:0.000076
+Counter 3 of patience 10
+00:19:46 Epoch: 069/200; AVG Training Loss (MSE):0.14985; AVG Val Loss (MSE):0.22483;AVG Val ACC:0.93000;lr:0.000076
+Counter 4 of patience 10
+00:20:27 Epoch: 070/200; AVG Training Loss (MSE):0.15740; AVG Val Loss (MSE):0.21702;AVG Val ACC:0.93000;lr:0.000076
+lr has been updated from 0.00007626 to 0.00006863
+Counter 5 of patience 10
+00:21:08 Epoch: 071/200; AVG Training Loss (MSE):0.15158; AVG Val Loss (MSE):0.21478;AVG Val ACC:0.92667;lr:0.000069
+Counter 6 of patience 10
+00:21:47 Epoch: 072/200; AVG Training Loss (MSE):0.15677; AVG Val Loss (MSE):0.21439;AVG Val ACC:0.92333;lr:0.000069
+00:22:28 Epoch: 073/200; AVG Training Loss (MSE):0.15108; AVG Val Loss (MSE):0.21253;AVG Val ACC:0.92000;lr:0.000069
+00:23:08 Epoch: 074/200; AVG Training Loss (MSE):0.15199; AVG Val Loss (MSE):0.21824;AVG Val ACC:0.93333;lr:0.000069
+Counter 1 of patience 10
+00:23:48 Epoch: 075/200; AVG Training Loss (MSE):0.14777; AVG Val Loss (MSE):0.21940;AVG Val ACC:0.93333;lr:0.000069
+lr has been updated from 0.00006863 to 0.00006177
+Counter 2 of patience 10
+00:24:28 Epoch: 076/200; AVG Training Loss (MSE):0.15464; AVG Val Loss (MSE):0.21265;AVG Val ACC:0.92667;lr:0.000062
+Counter 3 of patience 10
+00:25:08 Epoch: 077/200; AVG Training Loss (MSE):0.14283; AVG Val Loss (MSE):0.21344;AVG Val ACC:0.93667;lr:0.000062
+Counter 4 of patience 10
+00:25:48 Epoch: 078/200; AVG Training Loss (MSE):0.14174; AVG Val Loss (MSE):0.21793;AVG Val ACC:0.92667;lr:0.000062
+Counter 5 of patience 10
+00:26:28 Epoch: 079/200; AVG Training Loss (MSE):0.14224; AVG Val Loss (MSE):0.21786;AVG Val ACC:0.92667;lr:0.000062
+Counter 6 of patience 10
+00:27:08 Epoch: 080/200; AVG Training Loss (MSE):0.14302; AVG Val Loss (MSE):0.21284;AVG Val ACC:0.92333;lr:0.000062
+lr has been updated from 0.00006177 to 0.00005559
+Counter 7 of patience 10
+00:27:48 Epoch: 081/200; AVG Training Loss (MSE):0.14571; AVG Val Loss (MSE):0.22251;AVG Val ACC:0.92333;lr:0.000056
+Counter 8 of patience 10
+00:28:29 Epoch: 082/200; AVG Training Loss (MSE):0.14505; AVG Val Loss (MSE):0.21190;AVG Val ACC:0.92333;lr:0.000056
+00:29:09 Epoch: 083/200; AVG Training Loss (MSE):0.13952; AVG Val Loss (MSE):0.21270;AVG Val ACC:0.93000;lr:0.000056
+Counter 1 of patience 10
+00:29:48 Epoch: 084/200; AVG Training Loss (MSE):0.14099; AVG Val Loss (MSE):0.21159;AVG Val ACC:0.92000;lr:0.000056
+00:30:28 Epoch: 085/200; AVG Training Loss (MSE):0.14287; AVG Val Loss (MSE):0.21871;AVG Val ACC:0.93000;lr:0.000056
+lr has been updated from 0.00005559 to 0.00005003
+Counter 1 of patience 10
+00:31:08 Epoch: 086/200; AVG Training Loss (MSE):0.14020; AVG Val Loss (MSE):0.21616;AVG Val ACC:0.93333;lr:0.000050
+Counter 2 of patience 10
+00:31:48 Epoch: 087/200; AVG Training Loss (MSE):0.14216; AVG Val Loss (MSE):0.21113;AVG Val ACC:0.93000;lr:0.000050
+00:32:27 Epoch: 088/200; AVG Training Loss (MSE):0.13456; AVG Val Loss (MSE):0.21587;AVG Val ACC:0.93000;lr:0.000050
+Counter 1 of patience 10
+00:33:07 Epoch: 089/200; AVG Training Loss (MSE):0.13496; AVG Val Loss (MSE):0.21174;AVG Val ACC:0.92333;lr:0.000050
+Counter 2 of patience 10
+00:33:46 Epoch: 090/200; AVG Training Loss (MSE):0.13236; AVG Val Loss (MSE):0.21932;AVG Val ACC:0.92667;lr:0.000050
+lr has been updated from 0.00005003 to 0.00004503
+Counter 3 of patience 10
+00:34:26 Epoch: 091/200; AVG Training Loss (MSE):0.13225; AVG Val Loss (MSE):0.21510;AVG Val ACC:0.92667;lr:0.000045
+Counter 4 of patience 10
+00:35:05 Epoch: 092/200; AVG Training Loss (MSE):0.13134; AVG Val Loss (MSE):0.22203;AVG Val ACC:0.93000;lr:0.000045
+Counter 5 of patience 10
+00:35:45 Epoch: 093/200; AVG Training Loss (MSE):0.13229; AVG Val Loss (MSE):0.21784;AVG Val ACC:0.92667;lr:0.000045
+Counter 6 of patience 10
+00:36:24 Epoch: 094/200; AVG Training Loss (MSE):0.12805; AVG Val Loss (MSE):0.21068;AVG Val ACC:0.92667;lr:0.000045
+00:37:03 Epoch: 095/200; AVG Training Loss (MSE):0.12853; AVG Val Loss (MSE):0.21682;AVG Val ACC:0.93000;lr:0.000045
+lr has been updated from 0.00004503 to 0.00004053
+Counter 1 of patience 10
+00:37:43 Epoch: 096/200; AVG Training Loss (MSE):0.12971; AVG Val Loss (MSE):0.21630;AVG Val ACC:0.93000;lr:0.000041
+Counter 2 of patience 10
+00:38:22 Epoch: 097/200; AVG Training Loss (MSE):0.12846; AVG Val Loss (MSE):0.21348;AVG Val ACC:0.93000;lr:0.000041
+Counter 3 of patience 10
+00:39:01 Epoch: 098/200; AVG Training Loss (MSE):0.12194; AVG Val Loss (MSE):0.21541;AVG Val ACC:0.93000;lr:0.000041
+Counter 4 of patience 10
+00:39:40 Epoch: 099/200; AVG Training Loss (MSE):0.12901; AVG Val Loss (MSE):0.21101;AVG Val ACC:0.93000;lr:0.000041
+Counter 5 of patience 10
+00:40:21 Epoch: 100/200; AVG Training Loss (MSE):0.12801; AVG Val Loss (MSE):0.21074;AVG Val ACC:0.93333;lr:0.000041
+lr has been updated from 0.00004053 to 0.00003647
+Counter 6 of patience 10
+00:41:00 Epoch: 101/200; AVG Training Loss (MSE):0.12652; AVG Val Loss (MSE):0.21073;AVG Val ACC:0.93333;lr:0.000036
+Counter 7 of patience 10
+00:41:39 Epoch: 102/200; AVG Training Loss (MSE):0.12423; AVG Val Loss (MSE):0.21152;AVG Val ACC:0.93667;lr:0.000036
+Counter 8 of patience 10
+00:42:18 Epoch: 103/200; AVG Training Loss (MSE):0.13296; AVG Val Loss (MSE):0.21566;AVG Val ACC:0.93333;lr:0.000036
+Counter 9 of patience 10
+00:42:57 Epoch: 104/200; AVG Training Loss (MSE):0.12472; AVG Val Loss (MSE):0.21319;AVG Val ACC:0.93333;lr:0.000036
+Counter 10 of patience 10
+Early stopping with best_val_loss 0.21068008
+test loss: 0.244466; test acc: 0.899351
+GNNPair(
+  (loss_func): BCELoss()
+  (embedding_residue): Embedding(20, 128)
+  (convs): ModuleList(
+    (0): GCNConv()
+  )
+  (l_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (r_lin): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (mlp): Sequential(
+    (0): Linear(in_features=2304, out_features=640, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=640, out_features=256, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+    (7): Sigmoid()
+  )
+)
+len train_loader.dataset: 5264
+len val_loader.dataset: 300
+len test_loader.dataset: 1232
+00:43:44 Epoch: 001/200; AVG Training Loss (MSE):0.62319; AVG Val Loss (MSE):0.44207;AVG Val ACC:0.83000;lr:0.000300
+00:44:24 Epoch: 002/200; AVG Training Loss (MSE):0.43775; AVG Val Loss (MSE):0.39337;AVG Val ACC:0.84000;lr:0.000300
+00:45:04 Epoch: 003/200; AVG Training Loss (MSE):0.41360; AVG Val Loss (MSE):0.37331;AVG Val ACC:0.85667;lr:0.000300
+00:45:44 Epoch: 004/200; AVG Training Loss (MSE):0.39781; AVG Val Loss (MSE):0.36095;AVG Val ACC:0.86000;lr:0.000300
+00:46:23 Epoch: 005/200; AVG Training Loss (MSE):0.39449; AVG Val Loss (MSE):0.35965;AVG Val ACC:0.85333;lr:0.000300
+lr has been updated from 0.00030000 to 0.00027000
+00:47:02 Epoch: 006/200; AVG Training Loss (MSE):0.37782; AVG Val Loss (MSE):0.35301;AVG Val ACC:0.87000;lr:0.000270
+00:47:42 Epoch: 007/200; AVG Training Loss (MSE):0.36528; AVG Val Loss (MSE):0.35826;AVG Val ACC:0.85333;lr:0.000270
+Counter 1 of patience 10
+00:48:22 Epoch: 008/200; AVG Training Loss (MSE):0.35446; AVG Val Loss (MSE):0.33711;AVG Val ACC:0.86667;lr:0.000270
+00:49:01 Epoch: 009/200; AVG Training Loss (MSE):0.35368; AVG Val Loss (MSE):0.34754;AVG Val ACC:0.87000;lr:0.000270
+Counter 1 of patience 10
+00:49:42 Epoch: 010/200; AVG Training Loss (MSE):0.34179; AVG Val Loss (MSE):0.32874;AVG Val ACC:0.87667;lr:0.000270
+lr has been updated from 0.00027000 to 0.00024300
+00:50:22 Epoch: 011/200; AVG Training Loss (MSE):0.32939; AVG Val Loss (MSE):0.32039;AVG Val ACC:0.87667;lr:0.000243
+00:51:02 Epoch: 012/200; AVG Training Loss (MSE):0.32904; AVG Val Loss (MSE):0.31099;AVG Val ACC:0.89000;lr:0.000243
+00:51:42 Epoch: 013/200; AVG Training Loss (MSE):0.31529; AVG Val Loss (MSE):0.31395;AVG Val ACC:0.89333;lr:0.000243
+Counter 1 of patience 10
+00:52:21 Epoch: 014/200; AVG Training Loss (MSE):0.30899; AVG Val Loss (MSE):0.31170;AVG Val ACC:0.88667;lr:0.000243
+Counter 2 of patience 10
+00:53:01 Epoch: 015/200; AVG Training Loss (MSE):0.30209; AVG Val Loss (MSE):0.30162;AVG Val ACC:0.90333;lr:0.000243
+lr has been updated from 0.00024300 to 0.00021870
+00:53:40 Epoch: 016/200; AVG Training Loss (MSE):0.29949; AVG Val Loss (MSE):0.28757;AVG Val ACC:0.90667;lr:0.000219
+00:54:21 Epoch: 017/200; AVG Training Loss (MSE):0.29303; AVG Val Loss (MSE):0.28920;AVG Val ACC:0.90333;lr:0.000219
+Counter 1 of patience 10
+00:55:00 Epoch: 018/200; AVG Training Loss (MSE):0.28462; AVG Val Loss (MSE):0.28290;AVG Val ACC:0.89667;lr:0.000219
+00:55:40 Epoch: 019/200; AVG Training Loss (MSE):0.27343; AVG Val Loss (MSE):0.28197;AVG Val ACC:0.89000;lr:0.000219
+00:56:19 Epoch: 020/200; AVG Training Loss (MSE):0.27835; AVG Val Loss (MSE):0.26835;AVG Val ACC:0.90667;lr:0.000219
+lr has been updated from 0.00021870 to 0.00019683
+00:56:58 Epoch: 021/200; AVG Training Loss (MSE):0.26743; AVG Val Loss (MSE):0.27330;AVG Val ACC:0.90667;lr:0.000197
+Counter 1 of patience 10
+00:57:37 Epoch: 022/200; AVG Training Loss (MSE):0.26166; AVG Val Loss (MSE):0.28181;AVG Val ACC:0.90000;lr:0.000197
+Counter 2 of patience 10
+00:58:17 Epoch: 023/200; AVG Training Loss (MSE):0.26638; AVG Val Loss (MSE):0.26563;AVG Val ACC:0.90333;lr:0.000197
+00:58:58 Epoch: 024/200; AVG Training Loss (MSE):0.25629; AVG Val Loss (MSE):0.26222;AVG Val ACC:0.91333;lr:0.000197
+00:59:38 Epoch: 025/200; AVG Training Loss (MSE):0.25827; AVG Val Loss (MSE):0.26329;AVG Val ACC:0.91333;lr:0.000197
+lr has been updated from 0.00019683 to 0.00017715
+Counter 1 of patience 10
+01:00:17 Epoch: 026/200; AVG Training Loss (MSE):0.25231; AVG Val Loss (MSE):0.25557;AVG Val ACC:0.91667;lr:0.000177
+01:00:57 Epoch: 027/200; AVG Training Loss (MSE):0.24082; AVG Val Loss (MSE):0.25629;AVG Val ACC:0.90667;lr:0.000177
+Counter 1 of patience 10
+01:01:37 Epoch: 028/200; AVG Training Loss (MSE):0.24031; AVG Val Loss (MSE):0.25524;AVG Val ACC:0.91333;lr:0.000177
+01:02:16 Epoch: 029/200; AVG Training Loss (MSE):0.24155; AVG Val Loss (MSE):0.24652;AVG Val ACC:0.91333;lr:0.000177
+01:02:56 Epoch: 030/200; AVG Training Loss (MSE):0.24275; AVG Val Loss (MSE):0.25065;AVG Val ACC:0.91000;lr:0.000177
+lr has been updated from 0.00017715 to 0.00015943
+Counter 1 of patience 10
+01:03:36 Epoch: 031/200; AVG Training Loss (MSE):0.23550; AVG Val Loss (MSE):0.25298;AVG Val ACC:0.90667;lr:0.000159
+Counter 2 of patience 10
+01:04:16 Epoch: 032/200; AVG Training Loss (MSE):0.22907; AVG Val Loss (MSE):0.24809;AVG Val ACC:0.91667;lr:0.000159
+Counter 3 of patience 10
+01:04:56 Epoch: 033/200; AVG Training Loss (MSE):0.22470; AVG Val Loss (MSE):0.24179;AVG Val ACC:0.91333;lr:0.000159
+01:05:35 Epoch: 034/200; AVG Training Loss (MSE):0.22273; AVG Val Loss (MSE):0.24105;AVG Val ACC:0.91667;lr:0.000159
+01:06:15 Epoch: 035/200; AVG Training Loss (MSE):0.22986; AVG Val Loss (MSE):0.24641;AVG Val ACC:0.91000;lr:0.000159
+lr has been updated from 0.00015943 to 0.00014349
+Counter 1 of patience 10
+01:06:54 Epoch: 036/200; AVG Training Loss (MSE):0.21744; AVG Val Loss (MSE):0.23720;AVG Val ACC:0.91667;lr:0.000143
+01:07:34 Epoch: 037/200; AVG Training Loss (MSE):0.21804; AVG Val Loss (MSE):0.23929;AVG Val ACC:0.91667;lr:0.000143
+Counter 1 of patience 10
+01:08:15 Epoch: 038/200; AVG Training Loss (MSE):0.21267; AVG Val Loss (MSE):0.23583;AVG Val ACC:0.92000;lr:0.000143
+01:08:55 Epoch: 039/200; AVG Training Loss (MSE):0.20973; AVG Val Loss (MSE):0.23527;AVG Val ACC:0.92000;lr:0.000143
+01:09:34 Epoch: 040/200; AVG Training Loss (MSE):0.20302; AVG Val Loss (MSE):0.23440;AVG Val ACC:0.91667;lr:0.000143
+lr has been updated from 0.00014349 to 0.00012914
+01:10:14 Epoch: 041/200; AVG Training Loss (MSE):0.21048; AVG Val Loss (MSE):0.23061;AVG Val ACC:0.91667;lr:0.000129
+01:10:54 Epoch: 042/200; AVG Training Loss (MSE):0.20212; AVG Val Loss (MSE):0.23685;AVG Val ACC:0.92000;lr:0.000129
+Counter 1 of patience 10
+01:11:33 Epoch: 043/200; AVG Training Loss (MSE):0.20019; AVG Val Loss (MSE):0.23015;AVG Val ACC:0.91333;lr:0.000129
+01:12:13 Epoch: 044/200; AVG Training Loss (MSE):0.19878; AVG Val Loss (MSE):0.23134;AVG Val ACC:0.91333;lr:0.000129
+Counter 1 of patience 10
+01:12:54 Epoch: 045/200; AVG Training Loss (MSE):0.19286; AVG Val Loss (MSE):0.23298;AVG Val ACC:0.91333;lr:0.000129
+lr has been updated from 0.00012914 to 0.00011623
+Counter 2 of patience 10
+01:13:33 Epoch: 046/200; AVG Training Loss (MSE):0.19635; AVG Val Loss (MSE):0.22820;AVG Val ACC:0.91333;lr:0.000116
+01:14:13 Epoch: 047/200; AVG Training Loss (MSE):0.18466; AVG Val Loss (MSE):0.23398;AVG Val ACC:0.91333;lr:0.000116
+Counter 1 of patience 10
+01:14:53 Epoch: 048/200; AVG Training Loss (MSE):0.19431; AVG Val Loss (MSE):0.22502;AVG Val ACC:0.92000;lr:0.000116
+01:15:33 Epoch: 049/200; AVG Training Loss (MSE):0.18615; AVG Val Loss (MSE):0.22444;AVG Val ACC:0.91000;lr:0.000116
+01:16:13 Epoch: 050/200; AVG Training Loss (MSE):0.18985; AVG Val Loss (MSE):0.22467;AVG Val ACC:0.91667;lr:0.000116
+lr has been updated from 0.00011623 to 0.00010460
+Counter 1 of patience 10
+01:16:53 Epoch: 051/200; AVG Training Loss (MSE):0.17887; AVG Val Loss (MSE):0.22822;AVG Val ACC:0.91667;lr:0.000105
+Counter 2 of patience 10
+01:17:33 Epoch: 052/200; AVG Training Loss (MSE):0.18107; AVG Val Loss (MSE):0.22366;AVG Val ACC:0.91333;lr:0.000105
+01:18:13 Epoch: 053/200; AVG Training Loss (MSE):0.17763; AVG Val Loss (MSE):0.22737;AVG Val ACC:0.91000;lr:0.000105
+Counter 1 of patience 10
+01:18:53 Epoch: 054/200; AVG Training Loss (MSE):0.17977; AVG Val Loss (MSE):0.22606;AVG Val ACC:0.91667;lr:0.000105
+Counter 2 of patience 10
+01:19:32 Epoch: 055/200; AVG Training Loss (MSE):0.17357; AVG Val Loss (MSE):0.23029;AVG Val ACC:0.91333;lr:0.000105
+lr has been updated from 0.00010460 to 0.00009414
+Counter 3 of patience 10
+01:20:12 Epoch: 056/200; AVG Training Loss (MSE):0.16860; AVG Val Loss (MSE):0.22887;AVG Val ACC:0.92000;lr:0.000094
+Counter 4 of patience 10
+01:20:52 Epoch: 057/200; AVG Training Loss (MSE):0.17365; AVG Val Loss (MSE):0.22501;AVG Val ACC:0.92000;lr:0.000094
+Counter 5 of patience 10
+01:21:32 Epoch: 058/200; AVG Training Loss (MSE):0.17185; AVG Val Loss (MSE):0.23470;AVG Val ACC:0.92000;lr:0.000094
+Counter 6 of patience 10
+01:22:13 Epoch: 059/200; AVG Training Loss (MSE):0.17042; AVG Val Loss (MSE):0.22815;AVG Val ACC:0.92000;lr:0.000094
+Counter 7 of patience 10
+01:22:52 Epoch: 060/200; AVG Training Loss (MSE):0.17029; AVG Val Loss (MSE):0.23211;AVG Val ACC:0.92000;lr:0.000094
+lr has been updated from 0.00009414 to 0.00008473
+Counter 8 of patience 10
+01:23:32 Epoch: 061/200; AVG Training Loss (MSE):0.17207; AVG Val Loss (MSE):0.22683;AVG Val ACC:0.92000;lr:0.000085
+Counter 9 of patience 10
+01:24:12 Epoch: 062/200; AVG Training Loss (MSE):0.16160; AVG Val Loss (MSE):0.22035;AVG Val ACC:0.92000;lr:0.000085
+01:24:51 Epoch: 063/200; AVG Training Loss (MSE):0.16367; AVG Val Loss (MSE):0.22611;AVG Val ACC:0.91667;lr:0.000085
+Counter 1 of patience 10
+01:25:31 Epoch: 064/200; AVG Training Loss (MSE):0.16460; AVG Val Loss (MSE):0.22239;AVG Val ACC:0.91667;lr:0.000085
+Counter 2 of patience 10
+01:26:10 Epoch: 065/200; AVG Training Loss (MSE):0.16124; AVG Val Loss (MSE):0.22333;AVG Val ACC:0.92000;lr:0.000085
+lr has been updated from 0.00008473 to 0.00007626
+Counter 3 of patience 10
+01:26:50 Epoch: 066/200; AVG Training Loss (MSE):0.16175; AVG Val Loss (MSE):0.22219;AVG Val ACC:0.92667;lr:0.000076
+Counter 4 of patience 10
+01:27:30 Epoch: 067/200; AVG Training Loss (MSE):0.16032; AVG Val Loss (MSE):0.22663;AVG Val ACC:0.92667;lr:0.000076
+Counter 5 of patience 10
+01:28:10 Epoch: 068/200; AVG Training Loss (MSE):0.16135; AVG Val Loss (MSE):0.21875;AVG Val ACC:0.92000;lr:0.000076
+01:28:49 Epoch: 069/200; AVG Training Loss (MSE):0.15492; AVG Val Loss (MSE):0.22199;AVG Val ACC:0.92000;lr:0.000076
+Counter 1 of patience 10
+01:29:28 Epoch: 070/200; AVG Training Loss (MSE):0.15594; AVG Val Loss (MSE):0.22163;AVG Val ACC:0.92667;lr:0.000076
+lr has been updated from 0.00007626 to 0.00006863
+Counter 2 of patience 10
+01:30:08 Epoch: 071/200; AVG Training Loss (MSE):0.15411; AVG Val Loss (MSE):0.21840;AVG Val ACC:0.91333;lr:0.000069
+01:30:47 Epoch: 072/200; AVG Training Loss (MSE):0.15280; AVG Val Loss (MSE):0.22089;AVG Val ACC:0.92000;lr:0.000069
+Counter 1 of patience 10
+01:31:27 Epoch: 073/200; AVG Training Loss (MSE):0.15431; AVG Val Loss (MSE):0.22244;AVG Val ACC:0.92333;lr:0.000069
+Counter 2 of patience 10
+01:32:08 Epoch: 074/200; AVG Training Loss (MSE):0.15375; AVG Val Loss (MSE):0.22373;AVG Val ACC:0.92667;lr:0.000069
+Counter 3 of patience 10
+01:32:47 Epoch: 075/200; AVG Training Loss (MSE):0.14651; AVG Val Loss (MSE):0.22860;AVG Val ACC:0.92000;lr:0.000069
+lr has been updated from 0.00006863 to 0.00006177
+Counter 4 of patience 10
+01:33:26 Epoch: 076/200; AVG Training Loss (MSE):0.14509; AVG Val Loss (MSE):0.22046;AVG Val ACC:0.92000;lr:0.000062
+Counter 5 of patience 10
+01:34:06 Epoch: 077/200; AVG Training Loss (MSE):0.15322; AVG Val Loss (MSE):0.22360;AVG Val ACC:0.92000;lr:0.000062
+Counter 6 of patience 10
+01:34:46 Epoch: 078/200; AVG Training Loss (MSE):0.14991; AVG Val Loss (MSE):0.22452;AVG Val ACC:0.92667;lr:0.000062
+Counter 7 of patience 10
+01:35:25 Epoch: 079/200; AVG Training Loss (MSE):0.14556; AVG Val Loss (MSE):0.22607;AVG Val ACC:0.92667;lr:0.000062
+Counter 8 of patience 10
+01:36:06 Epoch: 080/200; AVG Training Loss (MSE):0.14277; AVG Val Loss (MSE):0.21637;AVG Val ACC:0.92667;lr:0.000062
+lr has been updated from 0.00006177 to 0.00005559
+01:36:45 Epoch: 081/200; AVG Training Loss (MSE):0.14416; AVG Val Loss (MSE):0.21405;AVG Val ACC:0.92000;lr:0.000056
+01:37:25 Epoch: 082/200; AVG Training Loss (MSE):0.14346; AVG Val Loss (MSE):0.22266;AVG Val ACC:0.92667;lr:0.000056
+Counter 1 of patience 10
+01:38:04 Epoch: 083/200; AVG Training Loss (MSE):0.14215; AVG Val Loss (MSE):0.21694;AVG Val ACC:0.91667;lr:0.000056
+Counter 2 of patience 10
+01:38:44 Epoch: 084/200; AVG Training Loss (MSE):0.14225; AVG Val Loss (MSE):0.21642;AVG Val ACC:0.92667;lr:0.000056
+Counter 3 of patience 10
+01:39:24 Epoch: 085/200; AVG Training Loss (MSE):0.13827; AVG Val Loss (MSE):0.21738;AVG Val ACC:0.91667;lr:0.000056
+lr has been updated from 0.00005559 to 0.00005003
+Counter 4 of patience 10
+01:40:03 Epoch: 086/200; AVG Training Loss (MSE):0.14005; AVG Val Loss (MSE):0.21539;AVG Val ACC:0.91667;lr:0.000050
+Counter 5 of patience 10
+01:40:43 Epoch: 087/200; AVG Training Loss (MSE):0.13729; AVG Val Loss (MSE):0.21823;AVG Val ACC:0.92333;lr:0.000050
+Counter 6 of patience 10
+01:41:23 Epoch: 088/200; AVG Training Loss (MSE):0.13584; AVG Val Loss (MSE):0.22015;AVG Val ACC:0.92667;lr:0.000050
+Counter 7 of patience 10
+01:42:03 Epoch: 089/200; AVG Training Loss (MSE):0.13220; AVG Val Loss (MSE):0.22422;AVG Val ACC:0.92333;lr:0.000050
+Counter 8 of patience 10
+01:42:42 Epoch: 090/200; AVG Training Loss (MSE):0.13354; AVG Val Loss (MSE):0.21968;AVG Val ACC:0.92667;lr:0.000050
+lr has been updated from 0.00005003 to 0.00004503
+Counter 9 of patience 10
+01:43:22 Epoch: 091/200; AVG Training Loss (MSE):0.13686; AVG Val Loss (MSE):0.21746;AVG Val ACC:0.92667;lr:0.000045
+Counter 10 of patience 10
+Early stopping with best_val_loss 0.21405457
+test loss: 0.242519; test acc: 0.900162
